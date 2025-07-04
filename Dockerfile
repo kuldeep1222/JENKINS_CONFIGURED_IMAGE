@@ -10,7 +10,8 @@ RUN dnf install -y java-17-openjdk wget git \
 
 EXPOSE 8080
 
-CMD ["java -jar $(find / -name jenkins.war | head -n 1)","echo 'JENKINS RUNNING INSIDE THE CONTAINER'"]
+
+CMD ["sh", "-c", "java -jar $(find / -name jenkins.war | head -n 1) && echo 'JENKINS RUNNING INSIDE THE CONTAINER'"]
 
 
 
